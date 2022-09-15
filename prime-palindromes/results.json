@@ -1,0 +1,10 @@
+{
+  "9-digits": {
+    "position": 129079,
+    "prime-palindrome": 318272813
+  },
+  "21-digits": {
+    "position": 140672630233,
+    "prime-palindrome": 151978145606541879151
+  }
+}
