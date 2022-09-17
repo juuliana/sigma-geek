@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "fs";
+import { writeFile, readFile } from "fs";
 
 let palindromes = [];
 
@@ -64,8 +64,10 @@ function getPalindromes(PI) {
   return;
 }
 
-//index
-readFile("1000000.json", (err, data) => {
-  if (err) throw err;
-  getPalindromes(data.toString());
-});
+// index
+export function getBigPalindrome() {
+  readFile("1000000.json", (err, data) => {
+    if (err) throw err;
+    getPalindromes(data.toString());
+  });
+}
