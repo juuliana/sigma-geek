@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start": "node prime-palindromes/big-digits/index.js"
+  }
+}

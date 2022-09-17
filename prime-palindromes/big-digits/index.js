@@ -21,8 +21,9 @@ function validateNumber(piString) {
 }
 
 function decrementNumbers(PI, lengthPI) {
-  for (let last = lengthPI; last > 20; last--) {
-    for (let first = 0; first < lengthPI; first++) {
+  for (let last = 999989; last > 20; last--) {
+    console.log(last);
+    for (let first = 0; first < 999989; first++) {
       const string = PI.slice(first, last);
 
       if (string.length > 21 && string.length < 100000) {
@@ -40,8 +41,6 @@ function decrementNumbers(PI, lengthPI) {
           }
         }
       }
-
-      console.log(first, "---", last);
     }
   }
 
