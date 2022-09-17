@@ -65,9 +65,7 @@ function getPalindromes(PI) {
 }
 
 // index
-export function getBigPalindrome() {
-  readFile("1000000.json", (err, data) => {
-    if (err) throw err;
-    getPalindromes(data.toString());
-  });
-}
+readFile("1000000.json", (err, data) => {
+  if (err) throw err;
+  getPalindromes(data.toString());
+});
