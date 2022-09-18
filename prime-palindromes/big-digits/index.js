@@ -1,4 +1,5 @@
 import { writeFile, readFile } from "fs";
+import express from "express";
 
 let palindromes = [];
 
@@ -66,7 +67,13 @@ function getPalindromes(PI) {
 }
 
 // index
-readFile("1000000.json", (err, data) => {
-  if (err) throw err;
-  getPalindromes(data.toString());
+const app = express();
+
+app.listen(3000, function () {
+  console.log("Server is running!");
+
+  readFile("1000000.json", (err, data) => {
+    if (err) throw err;
+    getPalindromes(data.toString());
+  });
 });
