@@ -20,13 +20,15 @@ function validateNumber(piString) {
   return isValid;
 }
 
-function decrementNumbers(PI, lengthPI) {
-  for (let last = 999989; last > 20; last--) {
-    console.log(last);
-    for (let first = 0; first < 999989; first++) {
+function decrementNumbers(PI, length) {
+  const lengthPI = 995912;
+
+  for (let last = lengthPI; last > 20; last--) {
+    console.log("last position: ", last);
+    for (let first = 0; first < lengthPI; first++) {
       const string = PI.slice(first, last);
 
-      if (string.length > 21 && string.length < 100000) {
+      if (string.length > 21) {
         const isValid = validateNumber(string);
 
         if (isValid) {
