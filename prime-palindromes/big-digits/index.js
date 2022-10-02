@@ -1,5 +1,4 @@
 import { writeFile, readFile } from "fs";
-import express from "express";
 
 let palindromes = [];
 
@@ -11,7 +10,7 @@ const isStringPalindrome = (numberInString) => {
 };
 
 function validateNumber(piString) {
-  const firstNumber = Number(piString.slice(0, 1));
+  const firstNumber = Number(piString.slice(0, 7));
   const lastNumber = Number(piString.slice(-1));
 
   if (firstNumber !== lastNumber) return false;
@@ -21,15 +20,12 @@ function validateNumber(piString) {
   return isValid;
 }
 
-function decrementNumbers(PI, length) {
-  const lengthPI = 995912;
-
+function decrementNumbers(PI, lengthPI) {
   for (let last = lengthPI; last > 20; last--) {
-    console.log("last position: ", last);
     for (let first = 0; first < lengthPI; first++) {
       const string = PI.slice(first, last);
 
-      if (string.length > 21) {
+      if (string.length > 20) {
         const isValid = validateNumber(string);
 
         if (isValid) {
@@ -44,6 +40,8 @@ function decrementNumbers(PI, length) {
           }
         }
       }
+
+      console.log(first, "---", last);
     }
   }
 
@@ -67,13 +65,7 @@ function getPalindromes(PI) {
 }
 
 // index
-const app = express();
-
-app.listen(3000, function () {
-  console.log("Server is running!");
-
-  readFile("1000000.json", (err, data) => {
-    if (err) throw err;
-    getPalindromes(data.toString());
-  });
+readFile("1000000.json", (err, data) => {
+  if (err) throw err;
+  getPalindromes(data.toString());
 });
